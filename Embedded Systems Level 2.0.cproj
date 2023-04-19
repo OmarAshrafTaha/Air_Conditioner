@@ -139,6 +139,18 @@
     <Compile Include="ECUAL\button\button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ECUAL\keypad\keypad.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\keypad\keypad_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\keypad\keypad_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\keypad\keypad_private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ECUAL\lcd\lcd.c">
       <SubType>compile</SubType>
     </Compile>
@@ -197,6 +209,7 @@
   <ItemGroup>
     <Folder Include="ECUAL\" />
     <Folder Include="ECUAL\button\" />
+    <Folder Include="ECUAL\keypad\" />
     <Folder Include="ECUAL\lcd\" />
     <Folder Include="ECUAL\led\" />
     <Folder Include="ECUAL\motor\" />

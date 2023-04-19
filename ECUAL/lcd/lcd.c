@@ -300,6 +300,6 @@ LCD_sendChar_error LCD_sendChar(uint8_t u8_a_char)
 	#elif LCD_Bit_Mode == 8
 	LCD_8_bit_sendChar(u8_a_char);
 	#endif
-	
+    
 	return char_send_OK;
 }

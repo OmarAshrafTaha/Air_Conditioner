@@ -6,8 +6,8 @@
  * Copyright (c) 2023 Omar Taha <<https://github.com/OmarAshrafTaha>>
  */
 
-#ifndef _LCD_PRIVATE_H_
-#define _LCD_PRIVATE_H_
+#ifndef LCD_PRIVATE_H
+#define LCD_PRIVATE_H
 
 #include "lcd_config.h"
 
@@ -104,5 +104,5 @@ typedef enum LCD_sendChar_error
 	#undef  LCD_Data_Port
 	#define LCD_Data_Port PORTD
 	#define LCD_Data_Dir DDRD
-#endif
+#endif /* LCD_PRIVATE_H */
 #endif /*_LCD_PRIVATE_H_ */
