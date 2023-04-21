@@ -8,8 +8,8 @@
 /************************************************************************/
 /* All microcontroller registers                                        */
 /************************************************************************/
-#ifndef REGISTERS_H_
-#define REGISTERS_H_
+#ifndef REGISTERS_H
+#define REGISTERS_H
 
 #include "types.h"
 
@@ -61,7 +61,11 @@
 #define TCCR2 *((volatile uint8_t*)0x45)
 #define TCNT2 *((volatile uint8_t*)0x44)
 
-
-
-
-#endif /* REGISTERS_H_ */
+/************************************************************************/
+/* ADC Registers                                                        */
+/************************************************************************/
+#define ADMUX  *((volatile uint8_t*)0x27)
+#define ADCSRA *((volatile uint8_t*)0x26)
+#define ADCH   *((volatile uint8_t*)0x25)
+#define ADCL   *((volatile uint8_t*)0x24)
+#endif /* REGISTERS_H */

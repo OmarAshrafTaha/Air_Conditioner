@@ -107,4 +107,17 @@ LCD_sendCommand_error LCD_sendCommand(uint8_t u8_a_command);
 /***************************************************************************/
 LCD_sendChar_error LCD_sendChar(uint8_t u8_a_char);
 
+/***************************************************************************/
+/** @brief    Sends 1 decimal point float numbers to LCD                   */
+/** @param    f_a_number                                                   */
+/** @return   char_send_OK                                                 */
+/***************************************************************************/
+LCD_sendChar_error LCD_sendFloat(float f_a_number);
+
+/***************************************************************************/
+/** @brief    Sends an integer value to LCD                                */
+/** @param    u16_a_number                                                 */
+/** @return   char_send_OK                                                 */
+/***************************************************************************/
+LCD_sendChar_error LCD_sendInteger(uint16_t u16_a_number);
 #endif /*_INTERFACE_H_ */

@@ -303,3 +303,83 @@ LCD_sendChar_error LCD_sendChar(uint8_t u8_a_char)
     
 	return char_send_OK;
 }
+
+/***************************************************************************/
+/** @brief    Sends numbers to LCD                                         */
+/** @param    f_a_number                                                   */
+/** @return   char_send_OK                                                 */
+/***************************************************************************/
+LCD_sendChar_error LCD_sendFloat(float f_a_number)
+{   
+    uint16_t u_l_toString[10];
+    uint8_t i =0;
+    uint8_t j =0;
+
+	uint16_t decimalPart;
+	
+	decimalPart=f_a_number*10;
+	decimalPart=decimalPart % 10;
+    if(f_a_number>0 && f_a_number < 1)
+	{
+		LCD_sendChar('0');
+		if((int) decimalPart == 0)
+		{
+			LCD_sendChar('.');
+			LCD_sendChar('0');
+			return char_send_OK;
+		}
+	}
+	else if(f_a_number == 0)
+	{
+		LCD_sendChar('0');
+	}
+	
+	else
+	{
+		while( (int)f_a_number >= 1)
+		{
+			u_l_toString[i]=((int)f_a_number % 10) +48;
+			f_a_number/=10;
+			i++;
+		}
+		for(j=i; j > 0; j--)
+		{
+				LCD_sendChar(u_l_toString[j-1]);
+		}
+	}
+
+	LCD_sendChar('.');
+	LCD_sendChar(decimalPart+48);
+	LCD_sendString("  ");
+	
+    return char_send_OK;
+}
+
+/***************************************************************************/
+/** @brief    Sends an integer value to LCD                                */
+/** @param    u16_a_number                                                 */
+/** @return   char_send_OK                                                 */
+/***************************************************************************/
+LCD_sendChar_error LCD_sendInteger(uint16_t u16_a_number)
+{
+	uint16_t u_l_toString[10];
+	uint8_t i =0;
+	uint8_t j =0;
+	
+	if(u16_a_number == 0)
+	{
+		LCD_sendChar('0');
+	}
+	while( u16_a_number > 0)
+	{
+		u_l_toString[i]=(u16_a_number % 10) +48;
+		u16_a_number/=10;
+		i++;
+	}
+	for(j=i; j > 0; j--)
+	{
+		LCD_sendChar(u_l_toString[j-1]);
+	}
+	LCD_sendString("  ");
+	return char_send_OK;
+}

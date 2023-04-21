@@ -178,6 +178,18 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\adc\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\adc\adc_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\adc\adc_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\adc\adc_private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\dio\dio.c">
       <SubType>compile</SubType>
     </Compile>
@@ -214,6 +226,7 @@
     <Folder Include="ECUAL\led\" />
     <Folder Include="ECUAL\motor\" />
     <Folder Include="MCAL\" />
+    <Folder Include="MCAL\adc\" />
     <Folder Include="MCAL\dio\" />
     <Folder Include="MCAL\interrupts\" />
     <Folder Include="MCAL\timers\" />
