@@ -350,8 +350,6 @@ LCD_sendChar_error LCD_sendFloat(float f_a_number)
 
 	LCD_sendChar('.');
 	LCD_sendChar(decimalPart+48);
-	LCD_sendString("  ");
-	
     return char_send_OK;
 }
 
@@ -380,6 +378,5 @@ LCD_sendChar_error LCD_sendInteger(uint16_t u16_a_number)
 	{
 		LCD_sendChar(u_l_toString[j-1]);
 	}
-	LCD_sendString("  ");
 	return char_send_OK;
 }

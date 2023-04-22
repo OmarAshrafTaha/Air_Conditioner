@@ -133,6 +133,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="APP\app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\app.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ECUAL\button\button.c">
       <SubType>compile</SubType>
     </Compile>
@@ -219,6 +225,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="APP\" />
     <Folder Include="ECUAL\" />
     <Folder Include="ECUAL\button\" />
     <Folder Include="ECUAL\keypad\" />
