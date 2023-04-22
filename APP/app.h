@@ -14,8 +14,9 @@
 
 typedef enum APP_initError
 {
-    APP_initSuccess,APP_initFail
-}APP_initError;
+    APP_initSuccess,
+    APP_initFail
+} APP_initError;
 
 /***************************************************************************/
 /** @brief Initializes all application modules and sets global variables   */
@@ -32,7 +33,7 @@ APP_initError APP_init(void);
 /** @param u8_a_str string to be printed in the passed coordinates         */
 /** @return void                                                           */
 /***************************************************************************/
-void APP_printString(uint8_t u8_a_row,uint8_t u8_a_column,uint8_t *u8_a_str);
+void APP_printString(uint8_t u8_a_row, uint8_t u8_a_column, uint8_t *u8_a_str);
 
 /***************************************************************************/
 /** @brief Prints a character to the LCD                                   */
@@ -41,7 +42,7 @@ void APP_printString(uint8_t u8_a_row,uint8_t u8_a_column,uint8_t *u8_a_str);
 /** @param u8_a_char character to be printed in the passed coordinates     */
 /** @return void                                                           */
 /***************************************************************************/
-void APP_printChar(uint8_t u8_a_row,uint8_t u8_a_column,uint8_t u8_a_char);
+void APP_printChar(uint8_t u8_a_row, uint8_t u8_a_column, uint8_t u8_a_char);
 
 /***************************************************************************/
 /** @brief Prints an integer to the LCD                                    */
@@ -50,7 +51,7 @@ void APP_printChar(uint8_t u8_a_row,uint8_t u8_a_column,uint8_t u8_a_char);
 /** @param u8_a_integer integer to be printed in the passed coordinates    */
 /** @return void                                                           */
 /***************************************************************************/
-void APP_printInteger(uint8_t u8_a_row,uint8_t u8_a_column,uint16_t u16_a_integer);
+void APP_printInteger(uint8_t u8_a_row, uint8_t u8_a_column, uint16_t u16_a_integer);
 
 /***************************************************************************/
 /** @brief Sets the required temprature by incrementing and decrementing   */

@@ -37,6 +37,21 @@
 #define C2           1
 #define C3           2
 
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*                                                            Buttons Map                                                           */
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+#define BUTTON_1    '1'
+#define BUTTON_2    '2'
+#define BUTTON_3    '3'
+#define BUTTON_4    '4'
+#define BUTTON_5    '5'
+#define BUTTON_6    '6'
+#define BUTTON_7    '7'
+#define BUTTON_8    '8'
+#define BUTTON_9    '9'
+#define BUTTON_10   '*'
+#define BUTTON_11   '0'
+#define BUTTON_12   '#'
 
 
 #endif /* KEYPAD_CONFIG_H */

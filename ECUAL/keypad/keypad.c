@@ -9,6 +9,13 @@
 
 #define ROWS_SIZE 4
 #define COLUMNS_SIZE 3
+static uint8_t u8_gs_keypadMap[ROWS_SIZE][COLUMNS_SIZE] =
+    {
+        {BUTTON_1, BUTTON_2, BUTTON_3},
+        {BUTTON_4, BUTTON_5, BUTTON_6},
+        {BUTTON_7, BUTTON_8, BUTTON_9},
+        {BUTTON_10, BUTTON_11, BUTTON_12}
+    };
 
 /***************************************************************************/
 /** @brief  Keypad initialization                                          */
@@ -29,14 +36,14 @@ KEYPAD_initError KEYPAD_init(void)
     DIO_init(C2, COLUMN_PORT_DATA, INPUT);
     DIO_init(C3, COLUMN_PORT_DATA, INPUT);
 
-/*Initial pin values*/
-    #if CONNECTION == 'D'
+    /*Initial pin values*/
+#if CONNECTION == 'D'
     DIO_write(R1, ROW_PORT_DATA, LOW);
     DIO_write(R2, ROW_PORT_DATA, LOW);
     DIO_write(R3, ROW_PORT_DATA, LOW);
     DIO_write(R4, ROW_PORT_DATA, LOW);
 
-    #elif CONNECTION == 'U'
+#elif CONNECTION == 'U'
     DIO_write(R1, ROW_PORT_DATA, HIGH);
     DIO_write(R2, ROW_PORT_DATA, HIGH);
     DIO_write(R3, ROW_PORT_DATA, HIGH);
@@ -46,7 +53,7 @@ KEYPAD_initError KEYPAD_init(void)
     DIO_write(C2, COLUMN_PORT_DATA, HIGH);
     DIO_write(C3, COLUMN_PORT_DATA, HIGH);
 
-    #endif
+#endif
     return KEYPAD_initSuccess;
 }
 
@@ -61,13 +68,13 @@ KEYPAD_readError KEYPAD_read(uint8_t *u8_a_value)
     uint8_t i = 0;
     uint8_t j = 0;
 
-    #if CONNECTION == 'U'
-    #define u8_l_readCheck LOW
-    #define u8_l_pinValue LOW
-    #elif CONNECTION == 'D'
-    #define u8_l_readCheck HIGH
-    #define u8_l_pinValue HIGH
-    #endif
+#if CONNECTION == 'U'
+#define u8_l_readCheck LOW
+#define u8_l_pinValue LOW
+#elif CONNECTION == 'D'
+#define u8_l_readCheck HIGH
+#define u8_l_pinValue HIGH
+#endif
 
     uint8_t u8_l_Rows[ROWS_SIZE] = {R1, R2, R3, R4};
     uint8_t u8_l_Columns[COLUMNS_SIZE] = {C1, C2, C3};
@@ -81,69 +88,7 @@ KEYPAD_readError KEYPAD_read(uint8_t *u8_a_value)
             DIO_read(u8_l_Columns[j], COLUMN_PORT_DATA, u8_a_value);
             if (*u8_a_value == u8_l_readCheck)
             {
-                if (i == 0)
-                {
-                    if (j == 0)
-                    {
-                        *u8_a_value = '1';
-                    }
-                    else if (j == 1)
-                    {
-                        *u8_a_value = '2';
-                    }
-                    else if (j == 2)
-                    {
-                        *u8_a_value = '3';
-                    }
-                }
-
-                else if (i == 1)
-                {
-                    if (j == 0)
-                    {
-                        *u8_a_value = '4';
-                    }
-                    else if (j == 1)
-                    {
-                        *u8_a_value = '5';
-                    }
-                    else if (j == 2)
-                    {
-                        *u8_a_value = '6';
-                    }
-                }
-
-                else if (i == 2)
-                {
-                    if (j == 0)
-                    {
-                        *u8_a_value = '7';
-                    }
-                    else if (j == 1)
-                    {
-                        *u8_a_value = '8';
-                    }
-                    else if (j == 2)
-                    {
-                        *u8_a_value = '9';
-                    }
-                }
-
-                else if (i == 3)
-                {
-                    if (j == 0)
-                    {
-                        *u8_a_value = '*';
-                    }
-                    else if (j == 1)
-                    {
-                        *u8_a_value = '0';
-                    }
-                    else if (j == 2)
-                    {
-                        *u8_a_value = '#';
-                    }
-                }
+                *u8_a_value = u8_gs_keypadMap[i][j];
                 DIO_toggle(u8_l_Rows[i], ROW_PORT_DATA);
                 return KEYPAD_readSuccess;
             }

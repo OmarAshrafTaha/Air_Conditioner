@@ -14,9 +14,7 @@
 int main(void)
 {
     /* Replace with your application code */	
-    LCD_init();
-    KEYPAD_init();
-	ADC_init(7);
+
 	APP_init();
 	
     while (1)
