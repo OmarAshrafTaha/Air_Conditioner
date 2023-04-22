@@ -161,7 +161,7 @@ void APP_setTemp()
     } 
 
     u16_l_ovf = TIMER2_getInitialValue(3000);//gets the number of overflows needed to reach 3 secs on timer2
-    TIMER2_perscalerMode(PRESCALER_MODE);//sets the prescaler and u8_gs_starts timer2
+    TIMER2_perscalerMode(PRESCALER_MODE);//sets the prescaler and starts timer2
     
     /*Check if the user is incrementing or decrementing the required temprature and if the user did not increment or decrement for 3 seconds, automatically set the value to its current state*/
     while((keypadValue != '3') && (u16_gs_currentCount < u16_l_ovf))/*Check if the user manually sets the temp or it timed out*/
