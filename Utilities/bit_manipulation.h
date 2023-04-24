@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef BIT_MANIPULATION_H_
-#define BIT_MANIPULATION_H_
+#ifndef BIT_MANIPULATION_H
+#define BIT_MANIPULATION_H
 #define Set_Bit(pinNumber,portNumber)		((portNumber) |= (1<<pinNumber))
 #define Clear_Bit(pinNumber,portNumber)		((portNumber) &= ~(1<<pinNumber))
 #define Read_Bit(pinNumber,portNumber)		(((portNumber) & (1<<pinNumber))>>pinNumber)
@@ -20,4 +20,4 @@
 
 
 
-#endif /* BIT_MANIPULATION_H_ */
+#endif /* BIT_MANIPULATION_H */

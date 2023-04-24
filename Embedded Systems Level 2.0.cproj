@@ -145,6 +145,18 @@
     <Compile Include="ECUAL\button\button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ECUAL\buzzer\buzzer_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\buzzer\buzzer_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\buzzer\buzzer_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\buzzer\buzzer_program.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ECUAL\keypad\keypad.c">
       <SubType>compile</SubType>
     </Compile>
@@ -228,6 +240,7 @@
     <Folder Include="APP\" />
     <Folder Include="ECUAL\" />
     <Folder Include="ECUAL\button\" />
+    <Folder Include="ECUAL\buzzer\" />
     <Folder Include="ECUAL\keypad\" />
     <Folder Include="ECUAL\lcd\" />
     <Folder Include="ECUAL\led\" />

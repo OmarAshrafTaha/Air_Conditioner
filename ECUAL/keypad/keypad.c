@@ -7,14 +7,14 @@
  */
 #include "keypad_interface.h"
 
-#define ROWS_SIZE 4
+#define ROWS_SIZE 3
 #define COLUMNS_SIZE 3
 static uint8_t u8_gs_keypadMap[ROWS_SIZE][COLUMNS_SIZE] =
     {
         {BUTTON_1, BUTTON_2, BUTTON_3},
         {BUTTON_4, BUTTON_5, BUTTON_6},
-        {BUTTON_7, BUTTON_8, BUTTON_9},
-        {BUTTON_10, BUTTON_11, BUTTON_12}
+        {BUTTON_7, BUTTON_8, BUTTON_9}
+        //{BUTTON_10, BUTTON_11, BUTTON_12}
     };
 
 /***************************************************************************/
@@ -29,7 +29,7 @@ KEYPAD_initError KEYPAD_init(void)
     DIO_init(R1, ROW_PORT_DATA, OUTPUT);
     DIO_init(R2, ROW_PORT_DATA, OUTPUT);
     DIO_init(R3, ROW_PORT_DATA, OUTPUT);
-    DIO_init(R4, ROW_PORT_DATA, OUTPUT);
+    //DIO_init(R4, ROW_PORT_DATA, OUTPUT);
 
     /*Columns direction initialization*/
     DIO_init(C1, COLUMN_PORT_DATA, INPUT);
@@ -41,13 +41,13 @@ KEYPAD_initError KEYPAD_init(void)
     DIO_write(R1, ROW_PORT_DATA, LOW);
     DIO_write(R2, ROW_PORT_DATA, LOW);
     DIO_write(R3, ROW_PORT_DATA, LOW);
-    DIO_write(R4, ROW_PORT_DATA, LOW);
+    //DIO_write(R4, ROW_PORT_DATA, LOW);
 
 #elif CONNECTION == 'U'
     DIO_write(R1, ROW_PORT_DATA, HIGH);
     DIO_write(R2, ROW_PORT_DATA, HIGH);
     DIO_write(R3, ROW_PORT_DATA, HIGH);
-    DIO_write(R4, ROW_PORT_DATA, HIGH);
+    //DIO_write(R4, ROW_PORT_DATA, HIGH);
 
     DIO_write(C1, COLUMN_PORT_DATA, HIGH);
     DIO_write(C2, COLUMN_PORT_DATA, HIGH);
@@ -76,7 +76,7 @@ KEYPAD_readError KEYPAD_read(uint8_t *u8_a_value)
 #define u8_l_pinValue HIGH
 #endif
 
-    uint8_t u8_l_Rows[ROWS_SIZE] = {R1, R2, R3, R4};
+    uint8_t u8_l_Rows[ROWS_SIZE] = {R1, R2, R3};
     uint8_t u8_l_Columns[COLUMNS_SIZE] = {C1, C2, C3};
 
     for (i = 0; i < ROWS_SIZE; i++)

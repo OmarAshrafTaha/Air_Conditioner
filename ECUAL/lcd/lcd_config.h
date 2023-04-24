@@ -18,8 +18,8 @@
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*                                                            DATA port                                                             */
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-#define LCD_Data_Port        'C' /*Choose Data Port.If 4 bit mode is chosen, choose which half of the chosen port will be used below*/
-#define LCD_Data_Port_Nibble 'L' /*Choose 'U' for Upper nibble of the port or 'L' for the Lower nibble of the port                  */
+#define LCD_Data_Port        'A' /*Choose Data Port.If 4 bit mode is chosen, choose which half of the chosen port will be used below*/
+#define LCD_Data_Port_Nibble 'U' /*Choose 'U' for Upper nibble of the port or 'L' for the Lower nibble of the port                  */
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
@@ -27,9 +27,9 @@
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 #define LCD_Command_Port     'A' /*Choose Command Port.                                                                             */
 /*Choose Command Port Pins                                                                                                          */
-#define EN                    0
-#define RW                    1
-#define RS                    2
+#define EN                    3
+#define RW                    2
+#define RS                    1
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/

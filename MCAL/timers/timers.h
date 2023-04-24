@@ -33,7 +33,7 @@
 /*										 => PRESCALE_EXT_FALLING_		*/
 /*										 => PRESCALE_EXT_RISING_        */
 /************************************************************************/
-#define F_CPU 1000000.0 //1Mhz
+#define F_CPU 16000000.0 //1Mhz
 #define PRESCALER_MODE NO_PRESCALE_
 #define t_tick  ((float)(PRESCALER_MODE / F_CPU))
 #define t0_max_delay  (256.0 * t_tick)

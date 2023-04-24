@@ -34,7 +34,9 @@ APP_initError APP_init(void)
     /*All modules intializations*/
     LCD_init();
     KEYPAD_init();
-    ADC_init(7);
+    ADC_init(0);
+    BUZZ_init();
+    BUZZ_off();
 
     /*Timer 2 Initialization*/
     SREG |= (1 << 7);                              // enable global interrupt
@@ -206,7 +208,7 @@ void APP_defaultView(void)
     float adc_value;     /*variable to store the read adc value in*/
     uint8_t keypadValue; /*value read from the keypad*/
 
-    ADC_read(7, &adc_value); /*get the sensor's reading*/
+    ADC_read(0, &adc_value); /*get the sensor's reading*/
     adc_value += 18;         /*if the sensor reads 0 then this translates to 18 degrees celsius*/
     APP_printString(0, 0, "Current  T :");
 
@@ -228,10 +230,12 @@ void APP_defaultView(void)
     /*Show buzzer if the sensor's reading is higher than the user required temp*/
     if ((int)adc_value > requiredTemp)
     {
+        BUZZ_on();
         APP_printChar(0, 15, 0); /*Show the bell custom character*/
     }
     else if ((int)adc_value <= requiredTemp)
     {
+        BUZZ_off();
         APP_printChar(0, 15, ' '); /*Clear the bell*/
     }
 
@@ -242,6 +246,7 @@ void APP_defaultView(void)
         LCD_sendCommand(Clear_Screen);
         if (keypadValue == '4') /*checks if the user wants to readjust*/
         {
+            BUZZ_off();
             APP_printString(0, 0, " Readjust mode");
             count = 0;
             TIMER0_delay(1000);
@@ -250,6 +255,7 @@ void APP_defaultView(void)
 
         else if (keypadValue == '5') /*checks if the user wants to reset*/
         {
+            BUZZ_off();
             APP_printString(0, 0, "Temp reset to 20");
             requiredTemp = 20;
             count = 0;

@@ -11,6 +11,7 @@
 #include "../ECUAL/lcd/lcd_interface.h"
 #include "../ECUAL/keypad/keypad_interface.h"
 #include "../MCAL/adc/adc_interface.h"
+#include "../ECUAL/buzzer/buzzer_interface.h"
 
 typedef enum APP_initError
 {

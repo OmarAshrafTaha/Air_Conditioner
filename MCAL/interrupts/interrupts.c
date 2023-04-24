@@ -29,13 +29,20 @@ ISR(EXT_INT_0)
 {
 	EXT_INT_0_callBack();
 }
-ISR(EXT_INT_1)
+
+ISR(EXT_INT_1)
 {
 	EXT_INT_1_callBack();
-}ISR(EXT_INT_2)
+}
+
+ISR(EXT_INT_2)
 {
 	EXT_INT_2_callBack();
-}// void EXTINT_setCallBackInt (uint8_t u8_a_intNumber, void (*funPtr) (void))
+}
+
+
+
+// void EXTINT_setCallBackInt (uint8_t u8_a_intNumber, void (*funPtr) (void))
 // {
 //  	if (funPtr != nullPtr)
 // 	{
@@ -62,4 +69,5 @@ ISR(EXT_INT_0)
 // 		EXTINT_0_callBack();
 // 	}
 // }
-/*EXTINT_setCallBackInt(INT_2, APP_button1Task);*/
+
+/*EXTINT_setCallBackInt(INT_2, APP_button1Task);*/
